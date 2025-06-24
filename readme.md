@@ -7,15 +7,18 @@ This project demonstrates a basic reverse proxy setup using NGINX and Docker Com
 
 
 2. Build and Start All Containers
-docker-compose up --build -d
+    docker-compose up --build -d
 
 
 4. Access the Services
-Open your browser and visit:
-Service 1:
-http://<your-ec2-ip>:8080/service1/
-Service 2:
-http://<your-ec2-ip>:8080/service2/
+   
+     Open your browser and visit:
+
+     Service 1:
+     http://<your-ec2-ip>:8080/service1/
+
+     Service 2:
+     http://<your-ec2-ip>:8080/service2/
 
 
  How Routing Works
@@ -31,11 +34,17 @@ Reverse proxy is configured in nginx/default.conf
 
 
 For Healthcheck we will add below part in our composefile
+
 healthcheck:
+
   test: ["CMD", "curl", "-f", "http://localhost:8001"]
+  
   interval: 10s
+  
   timeout: 5s
+  
   retries: 3
+  
 
 This health check runs `curl` inside the container every 10 seconds to ensure the service at `localhost:8001` responds successfully. If it fails 3 times in a row or takes longer than 5 seconds, the container is marked as unhealthy.
 
