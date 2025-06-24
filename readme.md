@@ -2,11 +2,13 @@ This project demonstrates a basic reverse proxy setup using NGINX and Docker Com
 
 
 1. Clone the Repository
-  git clone https://github.com/your-username/devops-nginx-reverse-proxy.git
-  cd devops-nginx-reverse-proxy
+ 
+     git clone https://github.com/your-username/devops-nginx-reverse-proxy.git
+  
+     cd devops-nginx-reverse-proxy
 
 
-2. Build and Start All Containers
+3. Build and Start All Containers
     docker-compose up --build -d
 
 
